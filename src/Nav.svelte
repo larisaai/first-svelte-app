@@ -12,6 +12,9 @@ import ArrowDown from 'svelte-icons/fa/FaSortDown.svelte';
 import SearchIcon from 'svelte-icons/fa/FaSearch.svelte';
 // import House from 'svelte-icons/fa/FaWarehouse.svelte';
 
+import { me } from './data.js'
+
+
 let txtSearch = "";
 let ajUsers = []
 let searchResultsDisplay = "none";
@@ -69,8 +72,9 @@ async function getUsers(){
   <div class="navC3">
         
         <div class="pofile-name">
-            <Profile/>
-            <p class="name">Larisa</p>
+            <div style="display: {$me.profilePicture ? "none": "block"}"> <Profile /></div>
+            <img class="profile-pic-small" src="{$me.profilePicture}" alt="">
+            <h5 class="name">{$me.name} </h5>
         </div>
         <div class="icon-container"><Plus/></div>
         <div class="icon-container"><Messenger/></div>
@@ -86,6 +90,7 @@ async function getUsers(){
 
 <style>
     nav {
+        position: fixed;
         display: grid;
         grid-template-columns: 10fr 20fr 10fr;
         grid-gap: 0.2rem;
@@ -97,6 +102,8 @@ async function getUsers(){
         background: white;
         /* background: #4267b2; */
         box-shadow: 0 1px 7px rgba(155, 155, 155, 0.12), 0 1px 2px rgba(155, 155, 155, 0.12);
+        top: -0.1rem;
+        z-index: 10;
     }
     .navC1 {
         display: grid;
@@ -161,7 +168,8 @@ async function getUsers(){
     .pofile-name {
         display: grid;
         grid-template-columns: 1fr 2fr; 
-         }
+        align-items: center;
+        }
 
 
 </style>
