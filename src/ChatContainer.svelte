@@ -1,8 +1,11 @@
 <script context="module">
-    
+    import SingleChat from './SingleChat.svelte'
 
     export function ShowChatWindow(){
         document.querySelector(".chats-wrapper").style.display = "flex"
+    }    
+    export function HideChatWindow(){
+        document.querySelector(".chats-wrapper").style.display = "none"
     }
   
 </script>
@@ -10,8 +13,7 @@
 
 
 <section class="chats-wrapper">
-    <div class="chat-container">
-    </div>
+    <SingleChat/>
 </section>
 
 
@@ -23,12 +25,7 @@
         display: none; 
         justify-content: flex-end;
         bottom: 0px;
-        width: calc( 100% - 15rem);
+        width: calc( 100% - 25rem);
     }
-	.chat-container {
-        width: 20rem;
-        height: 25rem;
-        background: red;
-
-    }
+	
 </style>
