@@ -1,6 +1,7 @@
 <script>
 import {me} from './../data.js'
-
+import Messenger from 'svelte-icons/fa/FaFacebookMessenger.svelte';
+import Market from 'svelte-icons/fa/FaStore.svelte';
 
 </script>
 <!-- ############################################# -->
