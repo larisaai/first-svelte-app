@@ -22,11 +22,19 @@ import Shortcuts from './Shortcuts.svelte';
 <!-- ############################################# -->
 
 <style>
-    .shourcuts { padding: 1rem; position: fixed;}
-        .profile-pic-small { width: 2rem; height: 2rem; object-fit: cover; border-radius: 50%;}
+    .shourcuts { 
+        padding: 2rem;
+        position: fixed;
+         }
+        .profile-pic-small { 
+            width: 2rem; 
+            height: 2rem; 
+            object-fit: cover; 
+            border-radius: 50%;
+            }
         .pofile-name {
             display: grid;
-            grid-template-columns: 1fr 2fr; 
+            grid-template-columns: 0.4fr 2fr; 
             align-items: center;
         }
 

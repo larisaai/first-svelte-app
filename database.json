@@ -1,0 +1,86 @@
+{
+    "users":[
+        {
+            "id": 1,
+            "firstName": "A",
+            "lastName": "AA",
+            "password": "1234",
+            "onlineStatus": 1,
+            "profileImg": "path",
+    
+            "posts": [
+                {"id":4, "title": "A4", "body": "AA4"},
+                {"id":5, "title": "A5", "body": "AA5"}
+            ],
+            "friends": [
+                {
+                    "id": 2, 
+                    "firstName": "B", 
+                    "lastName": "BB", 
+                    "profileImg": "path", 
+                    "posts": [
+                        {"id":6, "title": "B6", "body": "BB6"}
+                    ]
+                },
+                {
+                    "id": 3, 
+                    "firstName": "C", 
+                    "lastName": "CC", 
+                    "profileImg": "path", 
+                    "posts": [
+                        {"id":7, "title": "C7", "body": "CC4"},
+                        {"id":8, "title": "C8", "body": "CC5"}                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "firstName": "B",
+            "lastName": "BB",
+            "password": "1234",
+            "onlineStatus": 0,
+            "profileImg": "path",
+
+            "posts": [
+                {"id":6, "title": "B6", "body": "BB6"}
+            ],
+            "friends": [
+                {
+                    "id": 1, 
+                    "firstName": "A", 
+                    "lastName": "AA", 
+                    "profileImg": "path", 
+                    "posts": [
+                        {"id":4, "title": "A4", "body": "AA4"},
+                        {"id":5, "title": "A5", "body": "AA5"}
+                    ]
+                }     
+            ]
+        },
+        {
+            "id": 3,
+            "firstName": "C",
+            "lastName": "CC",
+            "password": "1234",
+            "onlineStatus": 1,
+            "profileImg": "path",
+    
+            "posts": [
+                {"id":7, "title": "C7", "body": "CC4"},
+                {"id":8, "title": "C8", "body": "CC5"}
+            ],
+            "friends": [
+                {
+                    "id": 1, 
+                    "firstName": "A", 
+                    "lastName": "AA", 
+                    "profileImg": "path", 
+                    "posts": [
+                        {"id":4, "title": "A4", "body": "AA4"},
+                        {"id":5, "title": "A5", "body": "AA5"}
+                    ]
+                }     
+            ]
+        }
+    ]
+}

@@ -6,9 +6,9 @@ import LeftSection from './leftSection/LeftSection.svelte';
 </script>
 <!-- ################### -->
 <section>
-	<LeftSection/>
-	<Posts/>
-	
+		<LeftSection/>
+		
+		<Posts/>
 
 </section>
 

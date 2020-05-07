@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "sirv-cli": "^0.4.4",
-    "svelte-icons": "^2.1.0"
+    "svelte-icons": "^2.1.0",
+    "express": "4.17.1",
+    "mongodb": "3.5.7",
+    "formidable": "1.2.2"
   }
 }

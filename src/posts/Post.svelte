@@ -2,6 +2,8 @@
 // import FriendsList from "./FriendsList.svelte"
     import FriendThumbnail from "./../FriendThumbnail.svelte"
     import {ajPosts} from './../data.js'
+    import ThumbsUp from 'svelte-icons/fa/FaThumbsUp.svelte';
+
     export let id;  
     $: friendId = $ajPosts.find( jPost => jPost.id == id).friendId
     $: title = $ajPosts.find( jPost => jPost.id == id).title

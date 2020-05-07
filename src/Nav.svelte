@@ -57,7 +57,7 @@ async function getUsers(){
 
     <div style="display: {searchResultsDisplay}" class="searchResultsContainer">
         {#each ajUsers as jUser }
-            <div>{jUser.name} {jUser.lastName}</div>
+            <div>{jUser.firstName} {jUser.lastName}</div>
         {/each }
     </div>
   </div>
