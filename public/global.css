@@ -16,8 +16,8 @@ input {
 i { max-height: 35px!important;}
 .profile-pic-small { width: 2rem; height: 2rem; object-fit: cover; border-radius: 50%;}
 
-.pofile-name {
+/* .pofile-name {
 	display: grid;
 	grid-template-columns: 1fr 2fr; 
 	align-items: center;
-}
+} */

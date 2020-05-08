@@ -2,18 +2,14 @@
 import {me} from './../data.js'
 import Groups from './Groups.svelte';
 import Shortcuts from './Shortcuts.svelte';
+import Me from './../components/Me.svelte'
 
 
 
 </script>
 <!-- ############################################# -->
 <section class="shourcuts">
-    
-    <div class="pofile-name">
-        <img class="profile-pic-small" src="{$me.profilePicture}" alt="">
-        <h5 class="name">{$me.name} {$me.lastName}</h5>
-    </div>
-   
+    <Me/>
 	<Shortcuts/>
 	<Groups/>
 
@@ -26,16 +22,5 @@ import Shortcuts from './Shortcuts.svelte';
         padding: 2rem;
         position: fixed;
          }
-        .profile-pic-small { 
-            width: 2rem; 
-            height: 2rem; 
-            object-fit: cover; 
-            border-radius: 50%;
-            }
-        .pofile-name {
-            display: grid;
-            grid-template-columns: 0.4fr 2fr; 
-            align-items: center;
-        }
 
 </style>

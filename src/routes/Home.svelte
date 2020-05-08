@@ -1,6 +1,6 @@
 <script>
-import Posts from './posts/Posts.svelte';
-import LeftSection from './leftSection/LeftSection.svelte';
+import Posts from '../posts/Posts.svelte';
+import LeftSection from '../leftSection/LeftSection.svelte';
 
 
 </script>

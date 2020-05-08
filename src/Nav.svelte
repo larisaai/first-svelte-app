@@ -11,6 +11,15 @@ import Bell from 'svelte-icons/fa/FaBell.svelte';
 import ArrowDown from 'svelte-icons/fa/FaSortDown.svelte';
 import SearchIcon from 'svelte-icons/fa/FaSearch.svelte';
 // import House from 'svelte-icons/fa/FaWarehouse.svelte';
+import { Router, Link, Route } from "svelte-routing";
+import Home from './routes/Home.svelte';
+import ProfilePage from './routes/Profile.svelte';
+import Watch from './routes/Watch.svelte';
+import MarketPage from './routes/MarketPage.svelte';
+import GroupsPage from './routes/GroupsPage.svelte';
+export const url = "";
+import Me from './components/Me.svelte'
+
 
 import { me } from './data.js'
 
@@ -41,8 +50,8 @@ async function getUsers(){
 
 </script>
 <!-- ################### -->
-
-<nav>
+<Router url="{url}">
+<section class="nav">
   <div class="navC1">
     <div class="icon">
         <Fb />
@@ -62,34 +71,42 @@ async function getUsers(){
     </div>
   </div>
   </div> 
-  <div class="navC2">
-    <House/>
-    <Video/>
-    <Market/>
-    <GroupOfPeople/>
-    <i></i>
-  </div>
+	
+	<nav class="navC2">
+		<Link to="/"><div class="nav2-icon"><House/></div></Link>
+		<Link to="watch"><div class="nav2-icon"><Video/></div></Link>
+		<Link to="market"><div class="nav2-icon"><Market/></div></Link>
+		<Link to="groups"><div class="nav2-icon"><GroupOfPeople/></div></Link>
+          <i></i> 
+  	</nav>
+
   <div class="navC3">
-        
-        <div class="pofile-name">
-            <div style="display: {$me.profilePicture ? "none": "block"}"> <Profile /></div>
-            <img class="profile-pic-small" src="{$me.profilePicture}" alt="">
-            <h5 class="name">{$me.name} </h5>
-        </div>
+        <Link to="profile"><Me/> </Link>
         <div class="icon-container"><Plus/></div>
         <div class="icon-container"><Messenger/></div>
         <div class="icon-container"><Bell/></div>
         <div class="icon-container"><ArrowDown/></div>
   </div>
 
-</nav> 
+</section> 
+	<div>
+		<Route path="profile" component="{ProfilePage}" />
+		<Route path="watch" component="{Watch}" />
+        <Route path="market" component="{MarketPage}" />
+		<Route path="groups" component="{GroupsPage}" />
+		<Route path="/"><Home /></Route>
+  	</div>
+</Router>
 
 
 <!-- ########################################## -->
 
 
 <style>
-    nav {
+.nav2-icon {
+    color: black;
+}
+    .nav {
         position: fixed;
         display: grid;
         grid-template-columns: 10fr 20fr 10fr;
@@ -127,19 +144,19 @@ async function getUsers(){
         padding: 0.5rem 1.5rem;
         border-radius:1rem;
         display: grid;
-        grid-template-columns: 1fr 10fr;
+        grid-template-columns: 1fr 15fr;
     }
 
-    nav form input {
+    .nav form input {
         text-align: center;
         background: transparent;
         display: flex;
         align-items: center;
     }
-    nav div.searchContainer {
+    .nav div.searchContainer {
         position: relative;
     }
-    nav div.searchResultsContainer {
+    .nav div.searchResultsContainer {
         position: absolute;
         width: 100%;
         height: auto;
@@ -150,7 +167,7 @@ async function getUsers(){
         padding: 0px 0.2rem;
         
     }
-    nav i {
+    .nav i {
         width: 30px;
         height: 30px;
     }
@@ -165,11 +182,6 @@ async function getUsers(){
         display: flex;
         align-items: center;
     }
-    .pofile-name {
-        display: grid;
-        grid-template-columns: 1fr 2fr; 
-        align-items: center;
-        }
-
+ 
 
 </style>

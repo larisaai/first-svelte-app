@@ -3,27 +3,25 @@
     import {me} from './../data.js'
     import FriendThumbnail from "./../FriendThumbnail.svelte"
     import Profile from 'svelte-icons/fa/FaUser.svelte';
+    import Me from './../components/Me.svelte'
 
 
   
 </script>
 <!-- ############################################# -->
     <div class="post">
-            <div class="pofile-name">
-                <img class="profile-pic-small" src="{$me.profilePicture}" alt="">
-                <h5 class="name">{$me.name} {$me.lastName}</h5>
-            </div>
-            <form>
-                <input type="text" placeholder="What us in yout mind?"/>
+        <Me/>
+        <form>
+            <input type="text" placeholder="What us in yout mind?"/>
 
-                <input type="file" name="file" id="file" class="inputfile" multiple/>
-                <label for="file">Photo/Video</label>
+            <input type="file" name="file" id="file" class="inputfile" multiple/>
+            <label for="file">Photo/Video</label>
 
-                <input type="select" name="Feeling" id="Feeling" class="inputfile" />
-                <label class="Feeling">Feeling/Activity</label>
-                <button>Post</button>
-            
-            </form>
+            <input type="select" name="Feeling" id="Feeling" class="inputfile" />
+            <label class="Feeling">Feeling/Activity</label>
+            <button>Post</button>
+        
+        </form>
         </div>
 <!-- ############################################# -->
 
@@ -59,20 +57,6 @@
        position: absolute;
        bottom: 1rem;
        right: 1rem;
-    }
-
-     .profile-pic-small { 
-         width: 2rem; 
-         height: 2rem; 
-         object-fit: cover; 
-         border-radius: 50%; 
-         margin-right: 1rem; 
-        }
-    .pofile-name {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-bottom: 1rem;
     }
         .inputfile {
             width: 0.1px;

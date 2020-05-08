@@ -71,6 +71,41 @@ mongoClient.connect(mongoUrl, { useUnifiedTopology: true }, function (err, respo
 
 })
 
+app.get("/users/user/posts", (req,res)=>{
+    // TRY CATCH SHOULD BE ADDED
+    const userId = "5eb41a83f7d7773700a4d72f"
+    db.collection("users").find({"_id": new ObjectID(userId)}).toArray( (err, result) => {
+    if(err){ console.log("database error - cannot read");  res.status(500).send([]); return } 
+
+    res.header("Access-Control-Allow-Origin", "*")
+
+    // JSON, same as JSON.PARSE
+    console.log(result[0].posts)
+    res.json(result[0].posts)
+    // res.json(result.value.posts)
+
+} )
+
+})
+
+app.get("/users/user-details", (req,res)=>{
+    // TRY CATCH SHOULD BE ADDED
+    const userId = "5eb41a83f7d7773700a4d72f"
+    db.collection("users").find({"_id": new ObjectID(userId)}).toArray( (err, result) => {
+    if(err){ console.log("database error - cannot read");  res.status(500).send([]); return } 
+
+    res.header("Access-Control-Allow-Origin", "*")
+
+    // JSON, same as JSON.PARSE
+    console.log(result[0])
+    res.json(result[0])
+    // res.json(result.value.posts)
+
+} )
+})
+
+
+
 
 
 ///// post a post on fb
